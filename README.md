@@ -20,7 +20,7 @@ The following tutorial explains how to set up this project using PostgreSQL and 
 
 ## Scripts
 
-- **start**: Runs the app in production.
+- **start**: Runs the app in production./
 - **server**: Runs the app in development.
 - **migrate**: Migrates the local development database to the latest.
 - **rollback**: Rolls back migrations in the local development database.
