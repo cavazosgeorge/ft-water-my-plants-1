@@ -10,3 +10,11 @@ exports.getUsers = (req, res, next) => {
     })
     .catch(next);
 };
+
+exports.getUsersById = (req, res, next) => {
+  User.findById(req.params.id)
+    .then((user) => {
+      res.json(user);
+    })
+    .catch(next);
+};
