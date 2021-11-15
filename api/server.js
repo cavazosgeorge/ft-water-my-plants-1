@@ -4,6 +4,7 @@ const cors = require("cors");
 
 const usersRouter = require("../routes/users-router");
 const authRouter = require("../routes/auth-router");
+const plantsRouter = require("../routes/plants-router");
 
 const server = express();
 
@@ -13,6 +14,7 @@ server.use(cors());
 
 server.use("/api/users", usersRouter);
 server.use("/api/auth", authRouter);
+server.use("/api/plants", plantsRouter);
 
 //Todo update message when build week is over
 server.get("/", (req, res) => {
