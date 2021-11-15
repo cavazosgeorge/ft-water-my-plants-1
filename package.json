@@ -7,6 +7,7 @@
     "migrate": "knex migrate:latest",
     "rollback": "knex migrate:rollback",
     "seed": "knex seed:run",
+    "make": "knex migrate:make ",
     "migrateh": "heroku run knex migrate:latest -a ft-water-my-plants-1",
     "rollbackh": "heroku run knex migrate:rollback -a ft-water-my-plants-1",
     "databaseh": "heroku pg:psql -a ft-water-my-plants-1",
