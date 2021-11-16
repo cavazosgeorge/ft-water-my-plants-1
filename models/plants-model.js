@@ -5,39 +5,37 @@ function find() {
 }
 
 function findById(id) {
-  return db("plants").where({ id });
+  return db("plants").where({ id }).first();
 }
 
-function findPlantsByUser(id) {
-  return db("plants").where({ id });
-}
+// function findPlantsByUser(user_id) {
+//   return db("plants").where({ user_id });
+// }
 
-function add(plants) {
+function add(plant) {
   return db("plants")
-    .insert(plants)
-    .then((res) => {
-      const id = res[0];
-      return db("plants").where({ id: id });
+    .insert(plant)
+    .then((ids) => {
+      return findById(ids[0]);
     });
 }
 
 function update(changes, id) {
   return db("plants")
-    .where({ id: id })
+    .where({ id })
     .update(changes)
-    .then((res) => {
-      return db("plants").where({ id });
+    .then((count) => {
+      return findById(id);
     });
 }
 
 function remove(id) {
-  return db("plants").where({ id: id }).del();
+  return db("plants").where({ id }).del();
 }
 
 module.exports = {
   find,
   findById,
-  findPlantsByUser,
   add,
   update,
   remove,
