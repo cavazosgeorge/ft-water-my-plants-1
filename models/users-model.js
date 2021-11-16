@@ -14,8 +14,8 @@ function findBy(where) {
   return db("users").where(where);
 }
 
-function findById(user_id) {
-  return db("users").where({ user_id });
+function findById(id) {
+  return db("users").where({ id });
 }
 
 function findByUsername(username) {
